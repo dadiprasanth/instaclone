@@ -26,6 +26,11 @@ app.use(bodyparser.json())
 //   res.send("hiii")
 // })
 app.use("/post",postroute) 
+app.get("/",(req,res)=>{
+    res.status(200).json({
+        message:"suceesssssssss"
+    })
+})
 app.get("/post/image/:img",(req,res)=>{
   //res.send(req.params.img)
   return res.sendFile(__dirname+`/uploads/${req.params.img}`)
